@@ -1,0 +1,19 @@
+{
+    "name"        : "chedi-django",
+    "author"      : "chedi",
+    "version"     : "0.3.0",
+    "source"      : "https://github.com/Chedi/puppet-django-1",
+    "license"     : "GPL-3.0",
+    "summary"     : "Deploy a Django app from git into an Nginx/Postgresql/Redis/Gunicorn stack",
+    "issues_url"  : "https://github.com/Chedi/puppet-django-1/issues",
+    "project_page": "https://github.com/Chedi/puppet-django-1",
+    "dependencies": [
+        {"name": "jfryman-nginx"        , "version_requirement": ">= 0.2.6"},
+        {"name": "stankevich-python"    , "version_requirement": ">= 1.8.0"},
+        {"name": "camptocamp-openssl"   , "version_requirement": ">= 1.3.8"},
+        {"name": "puppetlabs-vcsrepo"   , "version_requirement": ">= 1.2.0"},
+        {"name": "ajcrowe/supervisord"  , "version_requirement": ">= 0.5.2"},
+        {"name": "puppetlabs-firewall"  , "version_requirement": ">= 1.4.0"},
+        {"name": "puppetlabs-postgresql", "version_requirement": ">= 4.0.0"}
+    ]
+}
