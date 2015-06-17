@@ -29,4 +29,5 @@ out, err = process.communicate()
 
 python_version_match = match(r'^Python ((\d+\.)*\d+)$', err + out)
 if python_version_match:
+    print('xanadou_python={}'        .format(python_version_match.group(1)[0]))
     print('xanadou_python_version={}'.format(python_version_match.group(1)))
