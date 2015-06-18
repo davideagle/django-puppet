@@ -1,12 +1,16 @@
 {
     "name"        : "chedi-django",
     "author"      : "chedi",
-    "version"     : "0.3.0",
-    "source"      : "https://github.com/Chedi/puppet-django-1",
+    "version"     : "0.6.3",
+    "source"      : "https://github.com/Chedi/django-puppet",
     "license"     : "GPL-3.0",
     "summary"     : "Deploy a Django app from git into an Nginx/Postgresql/Redis/Gunicorn stack",
-    "issues_url"  : "https://github.com/Chedi/puppet-django-1/issues",
-    "project_page": "https://github.com/Chedi/puppet-django-1",
+    "issues_url"  : "https://github.com/Chedi/django-puppet/issues",
+    "project_page": "https://github.com/Chedi/django-puppet",
+    "operatingsystem_support": [{
+        "operatingsystem"       : "Fedora",
+        "operatingsystemrelease": ["21", "22"]
+     }],
     "dependencies": [
         {"name": "jfryman-nginx"        , "version_requirement": ">= 0.2.6"},
         {"name": "stankevich-python"    , "version_requirement": ">= 1.8.0"},

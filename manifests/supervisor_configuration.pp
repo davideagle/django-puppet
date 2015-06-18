@@ -36,7 +36,7 @@ class django::supervisor_configuration {
 
   supervisord::program { 'django_watchdog_gunicorn_reloader':
     user           => 'root',
-    command        => "${virtualenv_path}/bin/watchmedo shell-command --patterns='*.py;*.html' --recursive --command='${restart_gunicorn} && ${update_nginx_ownership}'",
+    command        => "${virtualenv_path}/bin/watchmedo shell-command --patterns='*.py;*.html' --recursive --command='${restart_gunicorn}'",
     directory      => $path,
     autostart      => true,
     autorestart    => true,
@@ -47,7 +47,7 @@ class django::supervisor_configuration {
 
   supervisord::program { 'django_watchdog_static_collector':
     user           => 'root',
-    command        => "${virtualenv_path}/bin/watchmedo shell-command --patterns='*' --recursive --command='${collect_static} && ${update_nginx_ownership}'",
+    command        => "${virtualenv_path}/bin/watchmedo shell-command --patterns='*' --recursive --command='${collect_static}'",
     directory      => "${directory}/assets",
     autostart      => true,
     autorestart    => true,
