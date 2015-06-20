@@ -56,9 +56,9 @@ class django (
   $extra_info ,
   $server_name,
 ) {
-  $collect_static                = "${path}/${app_name}/manage.py collectstatic --noinput"
+  $collect_static                = "${path}/collect_static.sh"
   $virtualenv_path               = "${path}/virtualenv"
-  $restart_gunicorn              = 'supervisorctl restart gunicorn_workers'
+  $restart_gunicorn              = "${path}/restart_gunicorn.sh"
   $gunicorn_upstream_name        = $app_name
   $update_nginx_ownership        = "chown -R nginx.nginx ${path} && chmod -R g+rw ${path} && find ${path} -type d| xargs chmod g+x"
   $django_virtualenv_environment = {
