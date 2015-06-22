@@ -1,7 +1,7 @@
 {
     "name"        : "chedi-django",
     "author"      : "chedi",
-    "version"     : "0.6.3",
+    "version"     : "0.6.8",
     "source"      : "https://github.com/Chedi/django-puppet",
     "license"     : "GPL-3.0",
     "summary"     : "Deploy a Django app from git into an Nginx/Postgresql/Redis/Gunicorn stack",

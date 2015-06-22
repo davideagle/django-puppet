@@ -30,6 +30,7 @@ class django::application_install {
 
   python::virtualenv { 'virtualenv':
     ensure       => present,
+    version      => $::xanadou_python,
     require      => Exec['virtualenv_dependencies'],
     venv_dir     => $virtualenv_path,
     requirements => "${path}/requirements.txt",
