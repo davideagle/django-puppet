@@ -7,10 +7,16 @@
 class django::environment_setup {
   $path           = $django::path
   $python_version = $django::xanadou_python
-
-  package {'git'    : ensure => 'installed'}
-  package {'redis'  : ensure => 'installed'}
-  package {'openssl': ensure => 'installed'}
+  
+  if ! defined(Package['git']) {
+    package {'git'    : ensure => 'installed'}
+  }
+  if ! defined(Package['redis']){
+    package {'redis'  : ensure => 'installed'}
+  }
+  if ! defined(Package['redis']){
+    package {'openssl': ensure => 'installed'}
+  }
 
   exec { 'disable_selinux':
     path    => '/usr/sbin/:/bin/',
