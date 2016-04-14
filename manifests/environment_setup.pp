@@ -31,10 +31,12 @@ class django::environment_setup {
     require => Package['redis'],
     command => '/usr/bin/systemctl enable redis && /usr/bin/systemctl start redis'
   }
-
-  class { 'python' :
-    dev        => true,
-    version    => $python_version,
-    virtualenv => true,
+  if ! defined(Class['python']){
+    class { 'python' :
+      dev        => true,
+      version    => $python_version,
+      virtualenv => true,
+    }
   }
+  
 }
